@@ -12,7 +12,7 @@ const dbConnectionData = {
 
 const dbConnectionTableData = {
   ...dbConnectionData,
-  ...{ database: process.env.dbname!.toLowerCase() },
+  ...{ database: <string>process.env.dbname!.toLowerCase() },
 };
 
 const tablesNames = [
@@ -30,9 +30,9 @@ export interface outData {
 // console.log(dbConnectionTableData);
 
 export const rundb = async (date: Date) => {
-  if (!(await checkDatabaseExistence())) {
-    await createDatabase();
-  }
+  // if (!(await checkDatabaseExistence())) {
+  //   await createDatabase();
+  // }
 
   for (let i = 0; i < tablesNames.length; i++) {
     if (i != 2) {
