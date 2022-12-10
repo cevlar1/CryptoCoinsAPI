@@ -97,7 +97,8 @@ const getPriceInCertainMarketAndPeriod = async (
         d.getHours() +
         ":" +
         d.getMinutes();
-      return { date: dateString, price: +elem["price"] };
+      //      return { date: dateString, price: +elem["price"] };
+      return { date: elem["date"].getTime().toString(), price: +elem["price"] };
     });
     return data;
   } else return null;
